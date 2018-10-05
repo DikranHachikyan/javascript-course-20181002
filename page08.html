@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+
+<script type="text/javascript">
+   //1. декларация
+
+   function showMessage(text, level){
+      if( text === null || text === undefined){
+        //window.alert('Текстът е празен');
+        //console.info('showMessage:Текстът е празен');
+        //console.warn('showMessage:Текстът е празен');
+        //console.error('showMessage:Текстът е празен');
+        console.log('showMessage:Текстът е празен');
+        text = '';
+      }
+
+      if( level === undefined || level < 1 || level > 6){
+        console.log('showMessage:Невалидна стойност за level (' + level+ ')');
+        level = 3;
+      }
+      document.write('<h' + level + '>' + text + '</h' + level + '>');
+   }
+   
+
+   var message;
+   //2. извикване на функцията
+   showMessage('Успешна регистрация', 9); 
+   showMessage( message, 4); 
+   showMessage('Избраният продукт не е наличен!', 3);  
+   showMessage('Успешен изход от профила!');  
+</script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste repudiandae magnam deleniti esse corporis harum, quia accusamus, assumenda, quod tempore, magni non aut hic eveniet sapiente maiores veniam porro suscipit.
+    </p>
+    <noscript>
+        Моля, разрешете ...
+    </noscript>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+
+<script type="text/javascript">
+   //1. декларация
+   var userName = '';
+
+   //2. питаме посетителя ...
+   userName = window.prompt('Как се казвате?');
+
+   //3. проверяваме какво е въвел
+   if( userName === null || userName === ""){
+      userName = 'посетител';
+   } 
+   else{
+      userName = '<em style="color:red">' + userName + '</em>';
+   }
+
+   //4. извеждаме в страницата
+   document.write('<h1>Здравейте ' + userName + '!</h1>'); 
+   
+    
+</script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste repudiandae magnam deleniti esse corporis harum, quia accusamus, assumenda, quod tempore, magni non aut hic eveniet sapiente maiores veniam porro suscipit.
+    </p>
+    <noscript>
+        Моля, разрешете ...
+    </noscript>
+</body>
+</html>
