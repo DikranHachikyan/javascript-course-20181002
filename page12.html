@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    
+  </head>
+  <body> 
+    <h1 id="title">Lorem ipsum dolor sit amet</h1>   
+    <p class="text">(text)Lorem ipsum <a href="#" title="External">dolor sit amet</a>, consectetur adipisicing elit. Fugit voluptate animi aperiam temporibus beatae cum officia nulla, possimus delectus odit eligendi, debitis vero, repudiandae nam quos in quod, architecto molestiae.
+    </p>
+    
+    <div>Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing</a> elit. Magni accusantium, reiciendis debitis dolor ratione commodi, blanditiis veritatis ipsam praesentium, in quae explicabo illum quos, inventore minus nulla alias odio officiis.
+    </div>
+    <div>Veniam alias, et eligendi itaque quia numquam voluptatibus. Incidunt dolorem magni, omnis et, veritatis blanditiis quia sapiente ipsam eum tenetur non accusantium aliquam. Vitae quo animi, ipsam maiores mollitia consequuntur.</div>
+    </div>
+    <p class="text">(text)Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit voluptate animi aperiam temporibus beatae cum officia nulla, possimus delectus odit eligendi, debitis vero, repudiandae nam quos in quod, architecto molestiae.
+    </p>
+    <p>Lorem ipsum dolor sit <a href="#">amet, consectetur adipisicing</a> elit. Fugit voluptate animi aperiam temporibus beatae cum officia nulla, possimus delectus odit eligendi, debitis vero, repudiandae nam quos in quod, architecto molestiae.
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit voluptate animi aperiam temporibus beatae cum officia nulla, possimus delectus odit eligendi, debitis vero, repudiandae nam quos in quod, architecto molestiae.
+    </p>
+
+    <!--
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    -->
+    <script src="./js/jquery-3.3.1.js"></script>
+
+    <script>
+      //локален js
+      $(document).ready(function(){
+        $('p').css('background-color','#ccc');
+
+        $('.text').css('border','1px solid red');
+
+        $('#title').css('font-family','monospace');
+      
+        $('a[title]').css('text-decoration','none');
+      });
+    </script>
+  </body>
+</html>
