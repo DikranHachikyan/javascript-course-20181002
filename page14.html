@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <style>
+      li a {
+          text-decoration: none;
+      }
+
+      ul {
+          list-style: none;
+      }
+      li img {
+          margin-right: 6px;
+      }
+    </style>
+  </head>
+  <body>
+      <button id="btn" >Click Me</button>
+      <hr>
+      <label>
+        <input type="checkbox" id="agree">Съгласен съм ...
+      </label>
+      <hr>
+      <button id="off">Stop Event Listener</button>
+    <!--
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    -->
+    <script src="./js/jquery-3.3.1.js"></script>
+
+    <script>
+      //локален js
+      $(document).ready(function(){
+          $('#btn').on( 'click', function (){
+              window.alert('Click Event');
+          });//on btn click
+          
+          $('#agree')
+              .one('click', function(){
+                window.alert('Click Event (once)');
+              }) //on click
+              .on('change', function(){
+                window.alert('Change Event');
+              });//on change
+
+          $('#off')
+              .one('click', function(){
+                  $('#btn').off('click');
+              });//on click off    
+      });
+    </script>
+  </body>
+</html>

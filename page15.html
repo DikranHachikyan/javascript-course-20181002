@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <style>
+      ul#gallery li+li {
+          display: none;
+      }
+
+      ul#gallery {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+      <ul id="gallery">
+        <li><img src="./pics-large/pic1-320x240.jpg" ></li>
+        <li><img src="./pics-large/pic2-320x240.jpg" ></li>
+        <li><img src="./pics-large/pic3-320x240.jpg" ></li>
+        <li><img src="./pics-large/pic4-320x240.jpg" ></li>
+        <li><img src="./pics-large/pic5-320x240.jpg" ></li>
+      </ul>
+
+      <div>
+        <input type="button" id="prv" value="<<">
+        <input type="button" id="nxt" value=">>">
+      </div>
+    <!--
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    -->
+    <script src="./js/jquery-3.3.1.js"></script>
+
+    <script>
+      //локален js
+      $(document).ready(function(){
+          var counter = 1;
+          
+          $('#nxt').click( function(){
+
+              $('#gallery li:first-child').appendTo( $('#gallery') );
+
+          });//on click button next
+
+          //(1)#prv За домашно
+          //(2) ограничете се променлива брояч (counter) смяната на картинките
+      });
+    </script>
+  </body>
+</html>
