@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <style>
+      .remove-todo{
+        margin-left: 10px;
+        font-size: 1.5em;
+        color:red;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+      .done{
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+     <h1>To-Do List</h1>
+     <div>
+       <input type="text" id="title">
+       <button id="add-todo">Add</button>
+     </div>
+
+     <ol id="todo-list"></ol>
+    <!--
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    -->
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/images.js"></script>
+
+    <script>
+      //локален js
+      $(document).ready(function(event){
+          $('#add-todo').click(function(event){
+              var title = $('#title').val();
+              //Да се провери дали има текст
+              //var p$ = $('<p></p>');
+              var li$ = $('<li>'
+                          +   '<span>' + title + '</span>'
+                          +   '<label>'
+                          +   '<input type="checkbox"/>Done'
+                          +   '</label>'
+                          +   '<button>&times;</button>'
+                          + '</li>');
+              li$.find('input').addClass('mark'); 
+              li$.find('button').addClass('remove-todo');
+              $('#todo-list').append(li$); 
+          });//on add todo click
+
+          $('#todo-list').on('click','.mark',function(event){
+            $(this).parent().prev().toggleClass('done');
+            console.log('done');
+          });//mark as done
+
+          $('#todo-list').on('click','.remove-todo', function(event){
+            //!!!this e бутона
+            $(this).parent().fadeOut(400, function(){
+                //!!!this e li
+                $(this).remove();
+            });//end of fade out
+          });//remove from list
+      });
+    </script>
+  </body>
+</html>

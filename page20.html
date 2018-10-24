@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <style>
+ 
+    </style>
+  </head>
+  <body>
+     <div id="view">
+       <h2>Title</h2>
+       <a href="#" title="">
+          <img src="./pics-large/chch-city-center320x240.png" alt="">
+       </a>
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quos 
+          cupiditate assumenda dicta, natus beatae! Voluptates minima dolore sed
+           temporibus accusamus laborum magnam quas modi similique excepturi.
+          Labore, earum, adipisci!
+       </p>
+     </div>
+     <button id="show">
+       Show
+     </button>
+    <!--
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    -->
+    <script src="./js/jquery-3.3.1.js"></script>
+
+    <script>
+      //локален js
+      $(document).ready(function(){
+          var item = {
+                      "url": "http://www.teara.govt.nz/en/video/44471/neil-dawsons-chalice-cathedral-square-christchurch",
+                      "src": "chch-millennium-monument320x240.png",
+                      "thumbnail": "chch-millennium-monument72x56.png",
+                      "title": "Millennium Monument",
+                      "alt": "Millennium Monument",
+                      "shortinfo": "Neil Dawson's magnificent Chalice sculpture is located in Christchurch's Cathedral Square.Chalice celebrates the new millennium and the 150th Anniversary of the founding of Christchurch",
+                      "info": "Neil Dawson's magnificent Chalice sculpture is located in Christchurch's Cathedral Square.Chalice celebrates the new millennium and the 150th Anniversary of the founding of Christchurch and Canterbury by the Canterbury Association. Chalice is a permanent sculpture with a primary hexagonal steel structure and a solid steel conical base. 18 metres high, 2 metres in diameter at ground level and 8.5 metres in diameter at the top, its shape mirrors the spire of Christchurch Cathedral."
+                    },
+               path = './pics-large/';
+
+          $('#show').click(function(){
+              var view = $('#view');
+
+              view.find('h2').html( item.title);
+              view.find('a').attr({ 
+                                      'href' :item.url
+                                    , 'title':item.title
+                                  });
+              view.find('img').attr({  
+                                       'src': path + item.src
+                                      ,'alt': item.alt
+                                    });
+              view.find('p').html(item.shortinfo);
+          });
+
+      });
+    </script>
+  </body>
+</html>

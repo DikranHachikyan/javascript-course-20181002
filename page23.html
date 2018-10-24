@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <style>
+ 
+    </style>
+  </head>
+  <body>
+     <h2>FAQ</h2>
+
+     <dl>
+       <dt><a href="#">Lorem ipsum dolor sit amet?</a></dt>
+       <dd>
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis laudantium consequatur enim totam impedit necessitatibus quae hic in mollitia expedita, animi sint alias ex cumque accusamus fuga consectetur a autem.
+       </dd>
+       <dt><a href="#">Xonsectetur adipisicing elit?</a></dt>
+       <dd>
+         Consectetur adipisicing elit. Eius similique suscipit ad, harum tempora veritatis facere, nemo esse atque praesentium nam a ea, quisquam. Qui consectetur sunt dolorum voluptatem fugit.
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est velit nam dicta eaque? Mollitia accusantium officiis, cupiditate earum quisquam incidunt nesciunt a cum provident eum, fuga ipsam iste dignissimos repellendus.
+       </dd>
+       <dt><a href="#">Temporibus, nostrum?</a></dt>
+       <dd>
+         Dolor sit amet, consectetur adipisicing elit. Asperiores voluptate necessitatibus quo repudiandae inventore quasi quas at recusandae cupiditate, repellat voluptates temporibus. Nihil temporibus reprehenderit quam perferendis, veritatis quo impedit.
+         Temporibus, nostrum. Repellendus eum quaerat placeat eaque consectetur, distinctio explicabo, eligendi laborum voluptatem velit cum, repudiandae autem, recusandae qui totam necessitatibus fugit tempora quae eius facere? In nisi rem quia!
+       </dd>
+       <dt><a href="#">Libero ut dignissimos, veritatis?</a></dt>
+       <dd>
+         Ipsum dolor sit amet, consectetur adipisicing elit. Placeat quae nobis accusamus error eaque magni et, earum vitae, nihil mollitia laboriosam soluta voluptatum saepe dolor voluptatibus libero ut dignissimos, veritatis?
+         Vitae consequatur tempora nihil officia corporis molestiae quibusdam reprehenderit enim nulla deleniti eaque cum, quidem aperiam esse veniam nisi repellendus consectetur qui alias odit sint quod, fugit ut at! Porro.
+       </dd>
+     </dl>
+
+    <!--
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    -->
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script src="./js/images.js"></script>
+
+    <script>
+      //локален js
+      $(document).ready(function(){
+          $('dd').hide();
+
+          $('a').click(function(){
+              $(this).parent().next().fadeToggle(1000);
+          });
+      });
+    </script>
+  </body>
+</html>
