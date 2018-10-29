@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <style>
+      table
+      , th
+      , td {
+        border: 1px solid;
+      }
+      .remove-todo{
+        margin-left: 10px;
+        font-size: 1.5em;
+        color:red;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+      .done{
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+     <h1>To-Do List</h1>
+     <!--
+      <input type="button" id="test" value="Clone">
+     -->
+     <div id="form">
+       <input type="text" id="title">
+       <button id="add-todo">Add</button>
+     </div>
+
+     <table id="todo-list">
+       <tr>
+         <th>N</th>
+         <th>Todo</th>
+         <th>Done</th>
+         <th>&nbsp;</th>
+       </tr>
+     </table>
+
+     <template id="todo-row">
+       <tr class="row">
+        <td class="counter"></td>
+        <td class="title">
+        </td>
+        <td>
+            <input type="checkbox" class="mark"/>
+        </td>
+        <td>
+         <button class="remove-todo">&times;</button>
+        </td>
+       </tr>
+     </template>
+    <!--
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    -->
+    <script src="./js/jquery-3.3.1.js"></script>
+    <script>
+      //локален js
+      //HW:допълнете примера, така че след премахване на елемент,
+      //списъкът да се преномерира
+      $(document).ready(function(event){
+          var counter = 0,
+              tmpl    = $('#todo-row').html(),
+              tr$     = $(tmpl);
+          
+          $('#add-todo').click(function(event){
+              var title = $('#title').val();
+
+              var newRow$ = tr$.clone();
+
+              newRow$.find('.counter').html(++counter);
+              newRow$.find('.title').html(title);
+              $('#todo-list').append( newRow$ );
+          });//add todo
+
+          $('#todo-list').on('click', '.mark', function(event){
+            $(this).parent().prev().toggleClass('done');
+          });
+
+          $('#todo-list').on('click', '.remove-todo', function(event){
+            //this = #remove-todo
+            $(this)
+                .parentsUntil('#todo-list', '.row')
+                .animate( { height:0, width:0, opacity:0}, 500, function(){
+                  //this = tr
+                  $(this).remove();
+                });//amimate
+          });
+          //$('#test').click(function(event){
+             //с обработчиците на събития
+             //var button = $('#add-todo').clone(true);
+             //само HTML
+             //var button = $('#add-todo').clone();
+             //$('#form').append(button);
+          //});//Clone Element
+      });
+    </script>
+  </body>
+</html>
